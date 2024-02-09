@@ -1,5 +1,7 @@
 <template>
-	<div></div>
+	<div>
+        <hero-section />
+    </div>
 </template>
 
 <script lang="ts" setup>

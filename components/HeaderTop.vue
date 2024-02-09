@@ -22,7 +22,7 @@
 							<li
 								v-for="(property, index) in navsProperty"
 								:key="index"
-								class="mx-0 link-property"
+								class="mx-0 link-property hover:text-green-500 cursor-pointer"
 								:class="{
 									'no-slash':
 										index === navsProperty?.length - 1,

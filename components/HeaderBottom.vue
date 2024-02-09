@@ -22,6 +22,7 @@
 					<li 
                         v-for="(nav, index) in navs" 
                         :key="index"
+                        class="hover:text-green-500 cursor-pointer"
                     >
 						<span class="text-sm">{{ nav?.text }}</span>
 					</li>
