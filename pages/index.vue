@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<hero-section />
+        <seals />
 	</div>
 </template>
 
