@@ -21,7 +21,6 @@ useHead(() => ({
 			name: 'description',
 			content: pageDescriptionContext,
 		},
-		// Anda dapat menambahkan meta tag lainnya sesuai kebutuhan
 	],
 }));
 </script>
