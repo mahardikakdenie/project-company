@@ -10,7 +10,9 @@
 			class="absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
 		<div
 			class="absolute inset-0 flex flex-col items-center justify-center z-10">
-			<div class="text-center text-white">
+			<div
+                class="text-center text-white"
+            >
 				<div
 					class="bg-opacity-10 bg-[#ffffff1A] text-white inline-block text-base font-semibold tracking-wide leading-7 mb-2 px-4 sm:px-10 py-1 sm:py-2 relative uppercase">
 					<span>Solusi Untuk Bisnis Anda</span>

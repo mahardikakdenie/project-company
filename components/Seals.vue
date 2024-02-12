@@ -5,7 +5,8 @@
 				<div
 					v-for="(item, index) in sealsItems"
 					:key="index"
-					class="border p-6 rounded bg-white shadow-lg seals-hover">
+					class="border p-6 rounded bg-white shadow-lg seals-hover"
+                >
 					<div
 						class="flex gap-3 transition duration-300">
 						<icon
@@ -43,77 +44,30 @@ interface SealsItems {
 	icon: string;
 	title: string;
 	description: string;
-}
+    hoverClass: string;
+};
 
 const sealsItems = ref<SealsItems[]>([
-	{
-		icon: 'carbon:development',
-		title: 'Software Developer',
-		description:
-			'We provide services with the best designs than our designer team for your business.',
-	},
-	{
-		icon: 'gg:ui-kit',
-		title: 'UI / UX',
-		description:
-			'We help develop company websites to be more professional and attractive',
-	},
-	{
-		icon: 'nimbus:marketing',
-		title: 'Digital Marketing',
-		description:
-			'We also help you market your products through an online marketplace.',
-	},
+  {
+    icon: 'carbon:development',
+    title: 'Software Developer',
+    description:
+      'We provide services with the best designs than our designer team for your business.',
+    hoverClass: 'hover-fade-right', // Tambahkan kelas hover
+  },
+  {
+    icon: 'gg:ui-kit',
+    title: 'UI / UX',
+    description:
+      'We help develop company websites to be more professional and attractive',
+    hoverClass: 'hover-fade-left', // Tambahkan kelas hover
+  },
+  {
+    icon: 'nimbus:marketing',
+    title: 'Digital Marketing',
+    description:
+      'We also help you market your products through an online marketplace.',
+    hoverClass: 'hover-fade-up', // Tambahkan kelas hover
+  },
 ]);
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
-}
-
-/* Tambahkan aturan CSS berikut */
-.bg-opacity-80 {
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-.hover\:bg-opacity-100:hover {
-	background-color: rgba(255, 255, 255, 1);
-}
-
-/* Penyesuaian warna teks untuk kontras */
-.text-white {
-	color: white;
-}
-
-.seals-hover {
-    &:hover {
-        @apply border-green-100 bg-green-50 cursor-pointer;
-
-        #title {
-            @apply text-green-500;
-        }
-
-        #icon {
-            @apply text-green-500;
-        }
-
-        #description {
-            @apply text-green-500;
-        }
-
-        button {
-            @apply border-green-500 bg-green-50;
-        }
-
-        #right-icon {
-            @apply text-green-500;
-        }
-    }
-}
-</style>

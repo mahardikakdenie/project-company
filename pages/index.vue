@@ -2,6 +2,7 @@
 	<div>
 		<hero-section />
         <seals />
+        <service />
 	</div>
 </template>
 
