@@ -17,4 +17,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
   },
+  devServer: {
+    port: 5174
+  }
 })

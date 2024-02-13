@@ -40,36 +40,16 @@
 </template>
 
 <script setup lang="ts">
+import { sealsItem } from '@/data/constant';
 interface SealsItems {
 	icon: string;
 	title: string;
 	description: string;
-    hoverClass: string;
+  hoverClass: string;
+  image: string;
 };
 
-const sealsItems = ref<SealsItems[]>([
-  {
-    icon: 'carbon:development',
-    title: 'Software Developer',
-    description:
-      'We provide services with the best designs than our designer team for your business.',
-    hoverClass: 'hover-fade-right', // Tambahkan kelas hover
-  },
-  {
-    icon: 'gg:ui-kit',
-    title: 'UI / UX',
-    description:
-      'We help develop company websites to be more professional and attractive',
-    hoverClass: 'hover-fade-left', // Tambahkan kelas hover
-  },
-  {
-    icon: 'nimbus:marketing',
-    title: 'Digital Marketing',
-    description:
-      'We also help you market your products through an online marketplace.',
-    hoverClass: 'hover-fade-up', // Tambahkan kelas hover
-  },
-]);
+const sealsItems = ref<SealsItems[]>(sealsItem);
 </script>
 
 

@@ -1,47 +1,49 @@
 <template>
-	<section class="">
+	<section class="mt-6 sm:mt-1">
 		<div class="text-center">
-			<div>
-				<span class="text-xs font-bold text-green-500 service-title">
+			<div class="mb-2">
+				<span
+					class="sm:text-xs text-[10px] font-bold text-green-500 service-title">
 					SERVICES WE’RE OFFERING
 				</span>
 			</div>
-			<div class="text-center">
-				<span class="text-[40px]">
-					High quality products and services <br />
+			<div class="text-center mb-4">
+				<span class="sm:text-[40px] text-sm leading-tight">
+					High-quality products and services
+					<br />
 					that we stand behind
 				</span>
 			</div>
 		</div>
 
-		<div class="px-[50px]">
-			<div class="grid grid-cols-3 gap-5">
-				<div v-for="i in 3" :key="i" class="border p-5">
-					<div class="border p-4 relative">
+		<div class="sm:px-[50px] px-3">
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+				<div
+					v-for="(service, i) in sealsItems"
+					:key="i"
+					class="border p-2">
+					<div class="p-2 relative overflow-hidden">
 						<img
-							src="https://oitech-nuxt.vercel.app/images/resource/service-1.jpg"
-							alt="" />
+							:src="service?.image"
+							alt=""
+							class="w-full h-auto" />
 						<div
-							class="items-center icon-sets bg-green-400 absolute px-3 bottom-[6px] text-[28px] w-[90px] flex justify-center left-[50px] h-[90px]">
-							<icon name="carbon:development" class="" />
+							class="items-center icon-sets text-white bg-green-400 absolute px-2 -bottom-[2px] text-[28px] w-[70px] flex justify-center left-[20px] h-[70px]">
+							<icon :name="service?.icon" class="" />
 						</div>
 					</div>
 					<div class="p-6">
 						<div>
-							<span class="text-lg"> Product development </span>
+							<span class="text-lg">{{ service?.title }}</span>
 						</div>
 						<div>
 							<small class="text-slate-400">
-								We’ve designed a culture that allows our
-								stewards to assimilate
+								{{ service?.description }}
 							</small>
 						</div>
 						<div class="mt-5 flex justify-center">
-							<button
-                            >
-								<span
-									class="text-green-500 text-xs"
-                                >
+							<button>
+								<span class="text-green-500 text-xs">
 									Read More
 								</span>
 								<icon
@@ -57,12 +59,23 @@
 </template>
 
 <script lang="ts" setup>
+import { sealsItem } from '@/data/constant';
+interface SealsItems {
+	icon: string;
+	title: string;
+	description: string;
+	hoverClass: string;
+	image: string;
+}
+
+const sealsItems = ref<SealsItems[]>(sealsItem);
+
 const isIconVisible = ref<Boolean>(true);
 const indexOfService = ref<number>();
-const onMouseEnter = (condition: boolean, index: number ): void => {
-    console.log(index);
-    
-    indexOfService.value = index;
+const onMouseEnter = (condition: boolean, index: number): void => {
+	console.log(index);
+
+	indexOfService.value = index;
 	isIconVisible.value = condition;
 };
 </script>
