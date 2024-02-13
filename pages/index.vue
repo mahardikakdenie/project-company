@@ -32,12 +32,12 @@ useHead(() => ({
 		{
 			hid: 'og:title',
 			property: 'og:title',
-			content: `${pageTitleContext} - Title`,
+			content: `${pageTitleContext}`,
 		},
 		{
 			hid: 'og:description',
 			property: 'og:description',
-			content: `${pageDescriptionContext} Description`,
+			content: `${pageDescriptionContext}`,
 		},
 		{
 			hid: 'image',
