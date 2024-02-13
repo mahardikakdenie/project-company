@@ -32,12 +32,17 @@ useHead(() => ({
 		{
 			hid: 'og:title',
 			property: 'og:title',
-			content: pageTitleContext,
+			content: `${pageTitleContext} - Title`,
 		},
 		{
 			hid: 'og:description',
 			property: 'og:description',
-			content: pageDescriptionContext,
+			content: `${pageDescriptionContext} Description`,
+		},
+		{
+			hid: 'image',
+			property: 'image',
+			content: '/image/nuxt.svg',
 		},
 		{
 			hid: 'og:image',
