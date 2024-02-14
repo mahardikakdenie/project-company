@@ -31,6 +31,22 @@
 
 				<div class="mb-4">
 					<label
+						for="category"
+						class="block text-sm font-medium text-gray-600"
+						>Kategori</label
+					>
+					<select
+						id="category"
+						name="category"
+						class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300">
+						<option value="support">Software Development</option>
+						<option value="sales">UI UX</option>
+						<option value="feedback">Digital Marketing</option>
+					</select>
+				</div>
+
+				<div class="mb-4">
+					<label
 						for="message"
 						class="block text-sm font-medium text-gray-600"
 						>Pesan</label

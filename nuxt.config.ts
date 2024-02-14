@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    'nuxt-aos'
+    'nuxt-aos',
+    // '@nuxtjs/axios'
   ],
   typescript: {
     typeCheck: true,
