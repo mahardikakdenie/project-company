@@ -86,7 +86,7 @@ const navsProperty = ref<NavsProperty[]>([
 
     .header-top {
         .wrapper {
-            @apply bg-[#F4F5F8] sm:flex block justify-between p-0 py-3 sm:py-1 sm:px-4 w-full relative items-center;
+            @apply bg-[#F4F5F8] sm:flex block justify-between p-0 py-2 sm:py-1 sm:px-4 w-full relative items-center;
         }
     }
     .link-property {

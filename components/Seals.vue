@@ -5,34 +5,32 @@
 				<div
 					v-for="(item, index) in sealsItems"
 					:key="index"
-					class="border p-6 rounded bg-white shadow-lg seals-hover"
-                >
-					<div
-						class="flex gap-3 transition duration-300">
+					class="border p-6 rounded bg-white seals-hover">
+					<div class="flex gap-3 transition duration-300">
 						<icon
-                            id="icon"
+							id="icon"
 							:name="item?.icon"
-							class="text-[30px] sm:text-slate-900 font-bold" 
-                        />
+							class="text-[30px] sm:text-slate-900 font-bold" />
 						<span
-                            id="title"
+							id="title"
 							class="items-center flex text-sm sm:text-slate-900 font-bold">
 							{{ item?.title }}
 						</span>
 					</div>
 					<div class="mt-2 h-[100px] p-3 flex items-center">
-                        <div
-                            id="description"
-                            class="text-slate-900"
-                        >
-                            {{ item?.description }}
-                        </div>
+						<div id="description" class="text-slate-900">
+							{{ item?.description }}
+						</div>
 					</div>
-                    <div class="flex justify-end">
-                        <button class="border rounded-md px-10 border-slate-900">
-                            <icon id="right-icon" name="icon-park-outline:right-two" class="text-sm text-slate-900" />
-                        </button>
-                    </div>
+					<div class="flex justify-end">
+						<button
+							class="border rounded-md px-10 border-slate-900">
+							<icon
+								id="right-icon"
+								name="icon-park-outline:right-two"
+								class="text-sm text-slate-900" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -45,19 +43,19 @@ interface SealsItems {
 	icon: string;
 	title: string;
 	description: string;
-  hoverClass: string;
-  image: string;
-};
+	hoverClass: string;
+	image: string;
+}
 
 const sealsItems = ref<SealsItems[]>(sealsItem);
 </script>
-
 
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
 	transition: opacity 0.5s;
 }
+
 .fade-enter,
 .fade-leave-to {
 	opacity: 0;
@@ -78,28 +76,28 @@ const sealsItems = ref<SealsItems[]>(sealsItem);
 }
 
 .seals-hover {
-    &:hover {
-        @apply border-green-100 bg-green-50 cursor-pointer;
+	&:hover {
+		@apply border-green-100 bg-green-50 cursor-pointer;
 
-        #title {
-            @apply text-green-500;
-        }
+		#title {
+			@apply text-green-500;
+		}
 
-        #icon {
-            @apply text-green-500;
-        }
+		#icon {
+			@apply text-green-500;
+		}
 
-        #description {
-            @apply text-green-500;
-        }
+		#description {
+			@apply text-green-500;
+		}
 
-        button {
-            @apply border-green-500 bg-green-50;
-        }
+		button {
+			@apply border-green-500 bg-green-50;
+		}
 
-        #right-icon {
-            @apply text-green-500;
-        }
-    }
+		#right-icon {
+			@apply text-green-500;
+		}
+	}
 }
 </style>
