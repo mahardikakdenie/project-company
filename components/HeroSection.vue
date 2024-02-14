@@ -10,9 +10,7 @@
 			class="absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
 		<div
 			class="absolute inset-0 flex flex-col items-center justify-center z-10">
-			<div
-                class="text-center text-white"
-            >
+			<div class="text-center text-white">
 				<div
 					class="bg-opacity-10 bg-[#ffffff1A] text-white inline-block text-base font-semibold tracking-wide leading-7 mb-2 px-4 sm:px-10 py-1 sm:py-2 relative uppercase">
 					<span>Solusi Untuk Bisnis Anda</span>
@@ -34,6 +32,7 @@
 					Temukan Lebih Banyak
 				</a>
 				<button
+					@click="scrollToElement('#forms')"
 					class="bg-green-500 text-sm text-white py-2 px-4 sm:py-2 sm:px-6 ml-2 rounded sm:text-sm hover:bg-gray-300 transition duration-300 mt-4 animate__animated animate__fadeInUp animate__delay-4s">
 					Hubungi Kami
 				</button>
@@ -41,3 +40,18 @@
 		</div>
 	</div>
 </template>
+
+<script setup lang="ts">
+const scrollToElement = (hash: string) => {
+	// Cari elemen target berdasarkan hash
+	const targetElement = document.querySelector(hash);
+
+	// Lakukan scroll hanya jika elemen ditemukan
+	if (targetElement) {
+		// Gunakan metode scrollIntoView untuk scroll ke elemen
+		targetElement.scrollIntoView({
+			behavior: 'smooth', // Gunakan 'smooth' untuk efek scroll yang halus
+		});
+	}
+};
+</script>

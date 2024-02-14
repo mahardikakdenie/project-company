@@ -24,7 +24,12 @@
                         :key="index"
                         class="hover:text-green-500 cursor-pointer"
                     >
-						<span class="text-sm">{{ nav?.text }}</span>
+						<nuxt-link 
+							:to="nav?.link" 
+							class="text-sm"
+						>
+							{{ nav?.text }}
+						</nuxt-link>
 					</li>
 				</ol>
 			</nav>
@@ -42,20 +47,25 @@
 
 interface Navs {
     text: string,
+	link: string;
 };
 
 const navs = ref < Navs[] >([
     {
         text: 'Home',
+		link: '/',
     },
     {
-        text: 'About',
+		text: 'About',
+		link: '/about',
     },
     {
-        text: 'Service',
+		text: 'Service',
+		link: '/',
     },
     {
-        text: 'Blog',
+		text: 'Blog',
+		link: '/',
     }
 ]);
 

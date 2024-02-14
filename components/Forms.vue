@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-gray-100 min-h-screen flex items-center justify-center">
+	<div id="forms" class="bg-gray-100 min-h-screen flex items-center justify-center">
 		<div class="bg-white p-8 rounded-md shadow-md w-full max-w-screen-lg">
 			<h2 class="text-2xl font-bold mb-6 text-gray-800">Hubungi Kami</h2>
 			<form>

@@ -1,5 +1,5 @@
 <template>
-	<section class="mt-6 sm:mt-1">
+	<section class="mt-6 sm:mt-1 py-10">
 		<div class="text-center">
 			<div class="mb-2">
 				<span
