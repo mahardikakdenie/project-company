@@ -1,7 +1,8 @@
 <template>
     <div>
-        <banner-section />
-        <service />
+        <banner-section title="Tentang Kami" />
+        <about-me />
+        <projects />
         <forms />
     </div>
 </template>

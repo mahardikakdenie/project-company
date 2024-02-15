@@ -42,16 +42,5 @@
 </template>
 
 <script setup lang="ts">
-const scrollToElement = (hash: string) => {
-	// Cari elemen target berdasarkan hash
-	const targetElement = document.querySelector(hash);
-
-	// Lakukan scroll hanya jika elemen ditemukan
-	if (targetElement) {
-		// Gunakan metode scrollIntoView untuk scroll ke elemen
-		targetElement.scrollIntoView({
-			behavior: 'smooth', // Gunakan 'smooth' untuk efek scroll yang halus
-		});
-	}
-};
+import { scrollToElement } from '@/data/helpers';
 </script>

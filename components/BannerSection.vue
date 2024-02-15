@@ -1,11 +1,11 @@
 <template>
     <div class="p-[80px] bg-slate-100">
-        <div>
-            <span class="text-[50px]">
-                About Us
+        <div class="text-center">
+            <span class="sm:text-[50px]">
+                {{ title }}
             </span>
-            <div>
-                <ul class="flex">
+            <div class="">
+                <ul class="flex justify-center">
                     <li 
                         v-for="(nav, i) in navs" 
                         :key="i"
@@ -13,7 +13,7 @@
                             'no-slash': i === 0, 
                             'end-list': i === navs?.length - 1
                         }"
-                        class="list-nav font-semibold"
+                        class="list-nav font-normal"
                     >
                         {{ nav?.title }}
                     </li>
@@ -24,6 +24,13 @@
 </template>
 
 <script setup lang="ts">
+
+const props = defineProps({
+    title: {
+        type: String,
+        default: '' as string,
+    },
+})
 
 interface Navs {
     title: string;

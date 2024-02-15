@@ -21,12 +21,12 @@
 				<div
 					v-for="(service, i) in sealsItems"
 					:key="i"
-					class="border p-2">
+					class="border rounded p-2">
 					<div class="p-2 relative overflow-hidden">
 						<img
 							:src="service?.image"
 							alt=""
-							class="w-full h-auto" />
+							class="w-full h-auto rounded" />
 						<div
 							class="items-center icon-sets text-white bg-green-400 absolute px-2 -bottom-[2px] text-[28px] w-[70px] flex justify-center left-[20px] h-[70px]">
 							<icon :name="service?.icon" class="" />

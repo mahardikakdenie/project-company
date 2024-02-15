@@ -23,13 +23,13 @@
 						</div>
 					</div>
 					<div class="flex justify-end">
-						<button
+						<!-- <button
 							class="border rounded-md px-10 border-slate-900">
 							<icon
 								id="right-icon"
 								name="icon-park-outline:right-two"
 								class="text-sm text-slate-900" />
-						</button>
+						</button> -->
 					</div>
 				</div>
 			</div>
@@ -76,27 +76,32 @@ const sealsItems = ref<SealsItems[]>(sealsItem);
 }
 
 .seals-hover {
+	transition: all 0.3s ease; /* Atur durasi dan jenis animasi sesuai kebutuhan Anda */
+
 	&:hover {
-		@apply border-green-100 bg-green-50 cursor-pointer;
+		border: 1px solid #34d399; /* Warna border saat dihover */
+		background-color: #ecfdf5; /* Warna background saat dihover */
+		cursor: pointer;
 
 		#title {
-			@apply text-green-500;
+			color: #34d399; /* Warna teks title saat dihover */
 		}
 
 		#icon {
-			@apply text-green-500;
+			color: #34d399; /* Warna teks icon saat dihover */
 		}
 
 		#description {
-			@apply text-green-500;
+			color: #34d399; /* Warna teks description saat dihover */
 		}
 
 		button {
-			@apply border-green-500 bg-green-50;
+			border: 1px solid #34d399; /* Warna border button saat dihover */
+			background-color: #ecfdf5; /* Warna background button saat dihover */
 		}
 
 		#right-icon {
-			@apply text-green-500;
+			color: #34d399; /* Warna teks right-icon saat dihover */
 		}
 	}
 }
