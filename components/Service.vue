@@ -42,14 +42,14 @@
 							</small>
 						</div>
 						<div class="mt-5 flex justify-center">
-							<button>
+							<nuxt-link to="/service/halo-gun">
 								<span class="text-green-500 text-xs">
 									Read More
 								</span>
 								<icon
 									name="icon-park-solid:right-two"
 									class="text-green-500 text-xs" />
-							</button>
+							</nuxt-link>
 						</div>
 					</div>
 				</div>
