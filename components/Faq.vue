@@ -7,15 +7,17 @@
 			<li
 				v-for="i in 3"
 				:key="i"
-				class="p-5 list-service bg-white dark:bg-gray-800 rounded-md">
+				class="p-5 list-service bg-white dark:bg-gray-800 rounded-md"
+                @click="setOpen"
+            >
 				<div class="flex justify-between">
 					<h3
 						class="text-md font-semibold mb-2 text-green-600 dark:text-green-400">
 						Software Developer
 					</h3>
-					<icon name="ic:baseline-plus" />
+					<icon :name="iconName" />
 				</div>
-				<div v-if="true" class="p-3 border-t">
+				<div v-if="isOpen" class="p-3 border-t">
 					<p class="text-gray-700 dark:text-gray-300 text-sm">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Dicta, rem quasi hic repellat voluptatibus excepturi.
@@ -48,5 +50,14 @@
 
 
 <script setup lang="ts">
-// 
+const isOpen = ref<Boolean>(false);
+const iconName = computed((): string => {
+    return !isOpen?.value ? 'ic:baseline-plus' : 'ph:minus-bold';
+});
+
+const setOpen = ():void => {
+    console.log('halo');
+    
+    isOpen.value = !isOpen.value;
+};
 </script>
