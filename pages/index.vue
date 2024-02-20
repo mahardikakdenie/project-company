@@ -4,7 +4,6 @@
         <seals />
         <service />
 		<projects />
-		<forms />
 	</div>
 </template>
 

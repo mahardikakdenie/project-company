@@ -2,6 +2,8 @@
 	<div>
 		<navbar />
 		<slot />
+		<forms />
+		<footer-app />
 	</div>
 </template>
 

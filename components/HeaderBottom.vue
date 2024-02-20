@@ -27,6 +27,7 @@
 						<nuxt-link 
 							:to="nav?.link" 
 							class="text-sm"
+							:class="{ 'text-green-500': nav?.link === $route?.path }"
 						>
 							{{ nav?.text }}
 						</nuxt-link>
@@ -61,11 +62,11 @@ const navs = ref < Navs[] >([
     },
     {
 		text: 'Service',
-		link: '/',
+		link: '/service',
     },
     {
 		text: 'Blog',
-		link: '/',
+		link: '/blog',
     }
 ]);
 
