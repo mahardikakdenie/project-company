@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
     'nuxt-aos',
+    '@pinia/nuxt',
+    // '~/plugins/helpers'
     // '@nuxtjs/axios'
   ],
   typescript: {

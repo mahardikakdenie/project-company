@@ -8,12 +8,14 @@
 				v-for="i in 3"
 				:key="i"
 				class="p-5 list-service bg-white dark:bg-gray-800 rounded-md"
-                @click="setOpen"
             >
-				<div class="flex justify-between">
+				<div 
+                    class="flex justify-between"
+                    @click="setOpen"
+                >
 					<h3
 						class="text-md font-semibold mb-2 text-green-600 dark:text-green-400">
-						Software Developer
+						Bagaimana cara menghubungi kami
 					</h3>
 					<icon :name="iconName" />
 				</div>
@@ -50,10 +52,14 @@
 
 
 <script setup lang="ts">
+import { useFaqStore } from '@/store/faq';
+const store = useFaqStore();
 const isOpen = ref<Boolean>(false);
 const iconName = computed((): string => {
     return !isOpen?.value ? 'ic:baseline-plus' : 'ph:minus-bold';
 });
+
+const faqs = computed(() => store);
 
 const setOpen = ():void => {
     console.log('halo');

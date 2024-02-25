@@ -1,71 +1,72 @@
 <template>
-	<div id="forms" class="bg-gray-100 min-h-screen flex items-center justify-center">
-		<div class="bg-white p-8 rounded-md shadow-md w-full max-w-screen-lg">
-			<h2 class="text-2xl font-bold mb-6 text-gray-800">Hubungi Kami</h2>
-			<form>
-				<div class="mb-4">
-					<label
-						for="name"
-						class="block text-sm font-medium text-gray-600"
-						>Nama</label
-					>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300" />
-				</div>
+	<div>
 
-				<div class="mb-4">
-					<label
-						for="email"
-						class="block text-sm font-medium text-gray-600"
-						>Email</label
-					>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300" />
-				</div>
-
-				<div class="mb-4">
-					<label
-						for="category"
-						class="block text-sm font-medium text-gray-600"
-						>Kategori</label
-					>
-					<select
-						id="category"
-						name="category"
-						class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300">
-						<option value="support">Software Development</option>
-						<option value="sales">UI UX</option>
-						<option value="feedback">Digital Marketing</option>
-					</select>
-				</div>
-
-				<div class="mb-4">
-					<label
-						for="message"
-						class="block text-sm font-medium text-gray-600"
-						>Pesan</label
-					>
-					<textarea
-						id="message"
-						name="message"
-						rows="4"
-						class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"></textarea>
-				</div>
-
-				<div>
-					<button
-						type="submit"
-						class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
-						Kirim
-					</button>
-				</div>
-			</form>
-		</div>
+	<tools-form-no-sidebar />
 	</div>
 </template>
+
+
+<script lang="ts" setup>
+
+interface Option {
+	label: string;
+	key: string;
+}
+
+interface Template {
+	key: string;
+	value: string;
+	options?: Option[];
+};
+
+const templates: Template[] = [
+	{
+		key: 'name',
+		value: '',
+		options: [],
+	},
+	{
+		key: 'email',
+		value: '',
+		options: [],
+	},
+	{
+		key: 'phone_number',
+		value: '',
+		options: [],
+	},
+	{
+		key: 'type',
+		value: '',
+		options: [
+			{
+				label: 'Software Developer',
+				key: 'software_developer',
+			},
+			{
+				label: 'UI/UX',
+				key: 'ui_ux',
+			},
+			{
+				label: 'Digital Marketing',
+				key: 'digital_marketing',
+			},
+		],
+	},
+	{
+		key: 'message',
+		value: '',
+		options: [],
+	},
+];
+
+const forms = ref <Template[]> (templates);
+
+
+const inputForm = (value: string, key: string) => {
+	console.log(value, key);
+};
+
+provide('forms', forms?.value);
+
+</script>
