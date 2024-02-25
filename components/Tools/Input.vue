@@ -4,27 +4,32 @@
 			{{ capitalizeWords(keyLabel) }}
 		</label>
 		<input
-			v-if="keyLabel !== 'type'"
+			v-if="keyLabel !== 'type' && keyLabel !== 'message'"
+			:ref="keyLabel"
 			:placeholder="`Mohon Masukan ${capitalizeWords(keyLabel)}`"
 			type="text"
 			:id="keyLabel"
 			:name="keyLabel"
 			class="field--input"
-			@input="onInput($event, keyLabel)"
-		/>
+			@input="onInput($event, keyLabel)" />
+		<textarea
+			v-if="keyLabel === 'message'"
+			:ref="keyLabel"
+			:id="keyLabel"
+			:placeholder="`Mohon Masukan ${capitalizeWords(keyLabel)}`"
+			class="field--input" />
 		<select
 			v-if="keyLabel === 'type' && options?.length > 0"
+			:ref="keyLabel"
 			:id="keyLabel"
 			:name="keyLabel"
 			:placeholder="`Mohon Masukan ${capitalizeWords(keyLabel)}`"
 			class="field--input"
-			@change="onInput($event, keyLabel)"
-		>
-			<option 
-				v-for="(option, index) in options" 
-				:key="index" 
-				:value="option?.value"
-			>
+			@change="onInput($event, keyLabel)">
+			<option
+				v-for="(option, index) in options"
+				:key="index"
+				:value="option?.value">
 				{{ option.label }}
 			</option>
 		</select>
@@ -49,7 +54,6 @@ const props = defineProps({
 });
 
 const emits = defineEmits(['on-input']);
-
 
 const onInput = (event: Event, key: string): void => {
 	const selectedValue = (event.target as HTMLSelectElement).value;

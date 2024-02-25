@@ -1,13 +1,11 @@
 <template>
-	<div>
-
-	<tools-form-no-sidebar />
-	</div>
+	<section>
+		<tools-form-no-sidebar v-if="false" />
+		<ToolsFormWithSidebar />
+	</section>
 </template>
 
-
 <script lang="ts" setup>
-
 interface Option {
 	label: string;
 	key: string;
@@ -17,7 +15,7 @@ interface Template {
 	key: string;
 	value: string;
 	options?: Option[];
-};
+}
 
 const templates: Template[] = [
 	{
@@ -60,13 +58,11 @@ const templates: Template[] = [
 	},
 ];
 
-const forms = ref <Template[]> (templates);
-
+const forms = ref<Template[]>(templates);
 
 const inputForm = (value: string, key: string) => {
 	console.log(value, key);
 };
 
 provide('forms', forms?.value);
-
 </script>
