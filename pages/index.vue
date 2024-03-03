@@ -8,6 +8,8 @@
 </template>
 
 <script lang="ts" setup>
+const baseApiUrl = useRuntimeConfig().public.BASE_API_URL;
+const endpoint = `${baseApiUrl}/organizations`;
 definePageMeta({
 	layout: 'default',
 });
@@ -15,7 +17,6 @@ const pageTitleContext = 'It Solution - Landing Page';
 const pageDescriptionContext =
 	'Solusi IT terkini untuk meningkatkan produktivitas bisnis Anda.';
 
-// Mengisi metadata berdasarkan konteks
 useHead(() => ({
 	title: pageTitleContext,
 	meta: [
@@ -76,4 +77,13 @@ useHead(() => ({
 		},
 	],
 }));
+
+const responses: any = await useFetch(endpoint, {
+	method: 'GET',
+	params: {
+		page: 1,
+		pageSize: 10,
+	},
+});
+
 </script>

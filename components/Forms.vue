@@ -1,7 +1,7 @@
 <template>
 	<section>
-		<tools-form-no-sidebar v-if="false" />
-		<ToolsFormWithSidebar />
+		<tools-form-no-sidebar v-if="true" />
+		<tools-form-with-sidebar v-if="false" />
 	</section>
 </template>
 

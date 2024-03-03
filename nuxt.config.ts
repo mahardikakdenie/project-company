@@ -21,6 +21,12 @@ export default defineNuxtConfig({
     exposeConfig: true,
   },
   devServer: {
-    port: 5174
-  }
+    port: process.env.PORT ? parseInt(process.env.PORT) : 5174
+  },
+  runtimeConfig: {
+    // Config within public will be also exposed to the client
+    public: {
+      BASE_API_URL: process.env.BASE_API_URL || 'http://127.0.0.1:8000/v1',
+    }
+  },
 })
