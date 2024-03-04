@@ -86,4 +86,6 @@ const responses: any = await useFetch(endpoint, {
 	},
 });
 
+console.log('responses => ', responses);
+
 </script>
